@@ -1,0 +1,7 @@
+theme: jekyll-theme-minimal
+title: quantitray
+description: An R package to calculate MPN (most probable number) from IDEXX Quanti-Tray, Quanti-Tray/2000, and Quanti-Tray/Legiolert tests
+
+logo: docs/quantitray-logo.png
+show_downloads: true
+google_analytics: "UA-111480581-1"
