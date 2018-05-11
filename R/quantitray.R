@@ -1,4 +1,4 @@
-#' mpn: Convert QuantiTray results to MPN.
+#' quantitray: Convert Quanti-Tray results to MPN.
 #'
 #' An R package to calculate MPN (most probable number) from IDEXX Quanti-Tray,
 #' Quanti-Tray/2000, and Quanti-Tray/Legiolert tests
@@ -8,8 +8,8 @@
 #'
 #' @section Full documentation:
 #' Full documentation for this package is available at
-#' http://www.janknappe.com/mpn/
+#' https://www.janknappe.com/quantitray
 #'
 #' @docType package
-#' @name mpn
+#' @name quantitray
 NULL
