@@ -7,9 +7,6 @@ Description: An R package to calculate MPN (most probable number) from IDEXX Qua
  Quanti-Tray/2000, and Quanti-Tray/Legiolert tests
 Depends: 
   R (>= 3.5.0)
-Imports: 
-  dplyr (>= 0.7.4), 
-  tidyr (>= 0.8.0)
 License: MIT + file LICENSE
 URL:
   https://janknappe.com/quantitray

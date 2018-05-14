@@ -11,15 +11,22 @@
 #'     \item 'qt' for QuantiTray method with 51 wells.
 #'     \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
 #'   }
+#'
 #' @return Numerical value: lower 95 \% confidence interval of MPN/100ml in
 #'   sample.
+#'
 #' @references
 #'   https://www.idexx.com/en/water/resources/mpn-generator/
+#'
 #' @author
 #'   Jan Knappe, \email{jan.knappe@@gmail.com}
-#' @import
-#'   dplyr tidyr
+#'
+#' @importFrom magrittr %>%
+#' @importFrom dplyr filter
+#' @importFrom dplyr select
+#'
 #' @export
+#'
 #' @examples
 #' quantify_95lo(large = 42, method = "qt")
 #' quantify_95lo(large = 42, small = 42, method = "qt-2000")
