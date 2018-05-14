@@ -10,7 +10,6 @@
 #'     \item 'quantify_mpn()' outputs the point estimate for MPN.
 #'     \item 'quantify_95lo()' outputs the lower 95\% confidence interval value.
 #'     \item 'quantify_95hi()' outputs the upper 95\% confidence interval value.
-#'     \item 'quantify_all()' outputs all the above as a list..
 #'   }
 #'
 #' @section Full documentation:

@@ -2,7 +2,6 @@
 
 export(quantify_95hi)
 export(quantify_95lo)
-export(quantify_all)
 export(quantify_mpn)
 importFrom(dplyr,filter)
 importFrom(dplyr,select)

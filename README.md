@@ -37,12 +37,11 @@ library(quantitray)
 
 #### Conversion functions
 
-This package introduces four conversion functions from well counts to bacterial counts:
+This package introduces conversion functions from well counts to bacterial counts:
 
 - `quantify_mpn(large, small, method)` to convert well counts to numeric point estimate MPN (in MPN/100 ml)
 - `quantify_95lo(large, small, method)` to convert well counts to numeric lower 95% confidence interval MPN (in MPN/100 ml)
 - `quantify_95hi(large, small, method)` to convert well counts to numeric upper 95% confidence interval MPN (in MPN/100 ml)
-- `quantify_all(large, small, method)` to convert well counts to a named list containing all the information above
 
 #### Arguments
 
