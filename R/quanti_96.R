@@ -13,7 +13,7 @@
 #'
 #' @docType data
 #'
-#' @usage data(quanti_legiolert)
+#' @usage data(quanti_96)
 #'
 #' @format A tibble with 637 rows and 3 variables
 #'

@@ -9,7 +9,7 @@
 \href{https://idexxcom-live-b02da1e51e754c9cb292133b-9c56c33.aldryn-media.com/filer_public/c9/9b/c99b6023-59fa-4418-95ff-f075ec23962c/quanti-tray-legiolert-mpn-table.pdf}{IDEXX Technologies Ltd}
 }
 \usage{
-data(quanti_legiolert)
+data(quanti_96)
 }
 \description{
 Results from an IDEXX Quanti-Tray/Legiolert are expressed in counts of

@@ -24,6 +24,7 @@
 #'
 #' @importFrom magrittr %>%
 #' @importFrom dplyr select
+#' @importFrom rlang .data
 #'
 #' @export
 #'
@@ -50,7 +51,7 @@ quantify_mpn <- function(large, small, method) {
   #
   result <-
     quantitray:::load_lookuptable(large, small, method) %>%
-    select(MPN_mean) %>%
+    select(.data$MPN_mean) %>%
     as.list()
   #
   result[[1]]

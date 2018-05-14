@@ -14,15 +14,15 @@ data(quanti_51)
 \description{
 Results from an IDEXX Quanti-Tray are expressed in counts of positive
 wells. This is a lookup table to convert these counts into MPN (most
-probable number) with upper and lower 95% confidence limits expressed
+probable number) with upper and lower 95\% confidence limits expressed
 in MPN/100 ml. The data set includes the following columns:
 }
 \details{
 \itemize{
   \item count_large. number of positive wells (0 -- 51)
-  \item MPN_95lo. lower 95% confidence interval (0 -- 146.1)
+  \item MPN_95lo. lower 95\% confidence interval (0 -- 146.1)
   \item MPN_mean. most probable number (0 -- 200.5)
-  \item MPN_95hi. upper 95% confidence interval (3.67 -- 387.6)
+  \item MPN_95hi. upper 95\% confidence interval (3.67 -- 387.6)
 }
 }
 \examples{

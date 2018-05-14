@@ -22,6 +22,7 @@
 #' @importFrom dplyr select
 #' @importFrom dplyr tibble
 #' @importFrom dplyr left_join
+#' @importFrom rlang .data
 #'
 
 load_lookuptable <- function(large, small, method) {
@@ -38,7 +39,7 @@ load_lookuptable <- function(large, small, method) {
   if (method %in% "qt") {
     result <-
       input %>%
-      select(count_large) %>%
+      select(.data$count_large) %>%
       left_join(quanti_51,
                 by = c("count_large" = "count_large"))
   }

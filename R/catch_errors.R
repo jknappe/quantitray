@@ -34,8 +34,8 @@ catch_errors <- function(large, small, method) {
   }
   #
   # 'method' must be valid character string
-  if (!missing(method) & !method %in% c("qt", "qt-2000")) {
-    stop("Argument 'method' must have value 'qt' or 'qt-2000'.")
+  if (!missing(method) & !method %in% c("qt", "qt-2000", "qt-legio")) {
+    stop("Argument 'method' must have value 'qt', 'qt-2000', or 'qt-legio'.")
   }
   #
   # 'large' must be provided

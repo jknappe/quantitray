@@ -23,6 +23,7 @@
 #'
 #' @importFrom magrittr %>%
 #' @importFrom dplyr select
+#' @importFrom rlang .data
 #'
 #' @export
 #'
@@ -48,7 +49,7 @@ quantify_95lo <- function(large, small, method) {
   #
   result <-
     quantitray:::load_lookuptable(large, small, method) %>%
-    select(MPN_95lo) %>%
+    select(.data$MPN_95lo) %>%
     as.list()
   #
   result[[1]]
