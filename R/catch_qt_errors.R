@@ -18,8 +18,10 @@
 #' @author
 #'   Jan Knappe, \email{jan.knappe@@gmail.com}
 #'
+#' @export
+#'
 
-catch_errors <- function(large, small, method) {
+catch_qt_errors <- function(large, small, method) {
   #
   # Function
   # ~~~~~~~~~~~~~~~~

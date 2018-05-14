@@ -24,8 +24,10 @@
 #' @importFrom dplyr left_join
 #' @importFrom rlang .data
 #'
+#' @export
+#'
 
-load_lookuptable <- function(large, small, method) {
+load_qt_lookuptable <- function(large, small, method) {
   #
   # Function
   # ~~~~~~~~~~~~~~~~

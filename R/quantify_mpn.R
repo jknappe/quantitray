@@ -39,7 +39,7 @@ quantify_mpn <- function(large, small, method) {
   # Error handling
   # ~~~~~~~~~~~~~~~~
   #
-  quantitray:::catch_errors(large, small, method)
+ catch_qt_errors(large, small, method)
   #
   # set 'small' to dummy value if not provided (for method 'qt')
   if (method %in% "qt") {
@@ -50,7 +50,7 @@ quantify_mpn <- function(large, small, method) {
   # ~~~~~~~~~~~~~~~~
   #
   result <-
-    quantitray:::load_lookuptable(large, small, method) %>%
+    load_qt_lookuptable(large, small, method) %>%
     select(.data$MPN_mean) %>%
     as.list()
   #

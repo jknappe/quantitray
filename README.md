@@ -17,7 +17,7 @@ Quanti-Tray and Quanti-Tray/2000 are used for quantifying coliforms, E. coli, en
 
 The manufacturer provides printable lookup tables on its website to convert from well counts to bacterial counts.
 
-The manufacturer also provides a Windows-based software solution for download on its website to convert from well counts to bacterial counts.
+The manufacturer also provides a 'Windows'-based software solution for download on its website to convert from well counts to bacterial counts.
 
 ### Solutions provided in this package
 
