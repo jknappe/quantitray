@@ -3,6 +3,7 @@
 export(quantify_95hi)
 export(quantify_95lo)
 export(quantify_mpn)
-importFrom(dplyr,filter)
+importFrom(dplyr,left_join)
 importFrom(dplyr,select)
+importFrom(dplyr,tibble)
 importFrom(magrittr,"%>%")
