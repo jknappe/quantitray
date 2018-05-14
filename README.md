@@ -5,7 +5,7 @@ An R package to calculate MPN (most probable number) from IDEXX Quanti-Tray, Qua
 
 Quanti-Tray tests allow to quantify bacterial counts in water samples. IDEXX Technologies offer three types of Quanti-Tray trays: Quanti-Tray (with 51 large wells), Quanti-Tray/2000 (with 49 large trays and 48 small trays), and Quanti-Tray/Legiolert (with 6 large trays and 90 small wells).
 
-![Quantitrays](https://janknappe.com/quantitray/docs/quantitrays.png)
+![Quantitrays](https://www.janknappe.com/quantitray/docs/quantitrays.png)
 
 For detailed description on how to use the tests and interprete the test results, please refer to the documentation provided by the manufacturer here: [https://www.idexx.com/en/water/water-products-services/quanti-tray-system/](https://www.idexx.com/en/water/water-products-services/quanti-tray-system/)
 
