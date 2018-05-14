@@ -38,7 +38,7 @@ quantify_all <- function(large, small, method) {
   # set 'small' to dummy value if not provided (for method 'qt')
   if (method %in% "qt") {
     if (missing(small)) {
-      small = "dummy"
+      small <- "dummy"
     }
   }
   # 'method' must be provided
