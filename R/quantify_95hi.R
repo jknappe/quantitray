@@ -22,8 +22,9 @@
 #'   Jan Knappe, \email{jan.knappe@@gmail.com}
 #'
 #' @importFrom magrittr %>%
-#' @importFrom dplyr filter
 #' @importFrom dplyr select
+#' @importFrom dplyr tibble
+#' @importFrom dplyr left_join
 #'
 #' @export
 #'
@@ -39,9 +40,7 @@ quantify_95hi <- function(large, small, method) {
   #
   # set 'small' to dummy value if not provided (for method 'qt')
   if (method %in% "qt") {
-    if (missing(small)) {
-      small <- "dummy"
-    }
+    small <- "dummy"
   }
   # 'method' must be provided
   if (missing(method)) {
@@ -124,25 +123,44 @@ quantify_95hi <- function(large, small, method) {
   # Function
   # ~~~~~~~~~~~~~~~~
   #
+  # convert input to tibble
+  input <-
+    tibble(count_large = large,
+           count_small = small)
+  #
   # for QuantiTray
   if (method %in% "qt") {
     result <-
-      quanti_51 %>%
-      filter(count_large == large) %>%
-      select(MPN_95hi) %>%
-      as.numeric()
+      input %>%
+      select(count_large) %>%
+      left_join(quanti_51,
+                by = c("count_large" = "count_large"))
   }
   #
   # for QuantiTray/2000
   if (method %in% "qt-2000") {
     result <-
-      quanti_97 %>%
-      filter(count_large == large,
-             count_small == small) %>%
-      select(MPN_95hi) %>%
-      as.numeric()
+      input %>%
+      left_join(quanti_97,
+                by = c("count_large" = "count_large",
+                       "count_small" = "count_small"))
   }
   #
-  result
+  # for QuantiTray/Legiolert
+  if (method %in% "qt-legio") {
+    result <-
+      input %>%
+      left_join(quanti_96,
+                by = c("count_large" = "count_large",
+                       "count_small" = "count_small"))
+  }
+  # create output
+  #
+  result <-
+    result %>%
+    select(MPN_95hi) %>%
+    as.list()
+  #
+  result[[1]]
 }
 #~~~~~~~~

@@ -13,14 +13,22 @@
 #'     \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
 #'     \item 'qt-legio' for QuantiTray/Legiolert method with 96 wells.
 #'   }
+#'
 #' @return Numerical value: Point estimate of MPN/100ml in sample.
+#'
 #' @references
 #'   https://www.idexx.com/en/water/resources/mpn-generator/
+#'
 #' @author
 #'   Jan Knappe, \email{jan.knappe@@gmail.com}
-#' @import
-#'   dplyr tidyr
+#'
+#' @importFrom magrittr %>%
+#' @importFrom dplyr select
+#' @importFrom dplyr tibble
+#' @importFrom dplyr left_join
+#'
 #' @export
+#'
 #' @examples
 #' quantify_mpn(large = 42, method = "qt")
 #' quantify_mpn(large = 42, small = 42, method = "qt-2000")
@@ -33,15 +41,13 @@ quantify_mpn <- function(large, small, method) {
   # ~~~~~~~~~~~~~~~~
   #
   # set 'small' to dummy value if not provided (for method 'qt')
-  if (method %in% "qt") {
-    if (missing(small)) {
-      small <- "dummy"
-    }
-  }
+   if (method %in% "qt") {
+     small <- "dummy"
+   }
   # 'method' must be provided
-  if (missing(method)) {
-    stop("Argument 'method' must be provided.")
-  }
+   if (missing(method)) {
+     stop("Argument 'method' must be provided.")
+   }
   #
   # 'method' must be valid character string
   if (!missing(method) & !method %in% c("qt", "qt-2000", "qt-legio")) {
@@ -136,35 +142,44 @@ quantify_mpn <- function(large, small, method) {
   # Function
   # ~~~~~~~~~~~~~~~~
   #
+  # convert input to tibble
+  input <-
+    tibble(count_large = large,
+           count_small = small)
+  #
   # for QuantiTray
   if (method %in% "qt") {
     result <-
-      quanti_51 %>%
-      filter(count_large == large) %>%
-      select(MPN_mean) %>%
-      as.numeric()
+      input %>%
+      select(count_large) %>%
+      left_join(quanti_51,
+                by = c("count_large" = "count_large"))
   }
   #
   # for QuantiTray/2000
   if (method %in% "qt-2000") {
     result <-
-      quanti_97 %>%
-      filter(count_large == large,
-             count_small == small) %>%
-      select(MPN_mean) %>%
-      as.numeric()
+      input %>%
+      left_join(quanti_97,
+                by = c("count_large" = "count_large",
+                       "count_small" = "count_small"))
   }
   #
   # for QuantiTray/Legiolert
   if (method %in% "qt-legio") {
     result <-
-      quanti_96 %>%
-      filter(count_large == large,
-             count_small == small) %>%
-      select(MPN_mean) %>%
-      as.numeric()
+      input %>%
+      left_join(quanti_96,
+                by = c("count_large" = "count_large",
+                       "count_small" = "count_small"))
   }
+  # create output
   #
-  result
+  result <-
+    result %>%
+    select(MPN_mean) %>%
+    as.list()
+  #
+  result[[1]]
 }
 #~~~~~~~~
