@@ -22,7 +22,7 @@
 #' @export
 #'
 
-catch_qt_errors <- function(large, small = NULL, method) {
+catch_qt_errors <- function(large, small, method) {
   #
   # Function
   # ~~~~~~~~~~~~~~~~

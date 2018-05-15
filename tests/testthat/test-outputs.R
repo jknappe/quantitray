@@ -1,4 +1,4 @@
-context("Outputs")
+context("Test Outputs")
 
 test_that("quantify_mpn returns numeric value", {
   expect_true(is.numeric(quantify_mpn(large = 0, method = "qt")))

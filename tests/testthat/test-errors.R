@@ -1,4 +1,4 @@
-context("Error Messages")
+context("Test Errors")
 
 test_that("catch_qt_errors throws error when argument 'large' is missing", {
   expect_error(catch_qt_errors(method = "qt"), "large")

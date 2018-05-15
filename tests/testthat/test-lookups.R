@@ -1,4 +1,5 @@
-context("Lookups")
+context(" Test Lookups")
+library(tibble)
 
 test_that("load_qt_lookuptable returns tibble", {
   expect_true(is.tibble(load_qt_lookuptable(large = 0, small = 0, method = "qt")))
