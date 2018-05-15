@@ -22,94 +22,97 @@
 #' @export
 #'
 
-catch_qt_errors <- function(large, small, method) {
+catch_qt_errors <- function(large, small = NULL, method) {
   #
   # Function
   # ~~~~~~~~~~~~~~~~
   #
-  # set 'small' to dummy value if not provided (for method 'qt')
-  if (method %in% "qt") {
-    if (!missing(small)) {
-      stop("Argument 'small' must not be provided for method 'qt'.")
-    }
-    small <- "dummy"
-  }
-  # 'method' must be provided
-  if (missing(method)) {
-    stop("Argument 'method' must be provided.")
-  }
-  #
-  # 'method' must be valid character string
-  if (!missing(method) & !method %in% c("qt", "qt-2000", "qt-legio")) {
-    stop("Argument 'method' must have value 'qt', 'qt-2000', or 'qt-legio'.")
-  }
-  #
-  # 'large' must be provided
+  # Missing argument 'large'
   if (missing(large)) {
     stop("Argument 'large' must be provided.")
   }
   #
-  # 'small' must be provided for method = qt-2000
-  if (method %in% c("qt-2000")) {
-    if (missing(small)) {
-      stop("Argument 'small' must be provided for method 'qt-2000'")
+  # Missing argument 'small'
+  if (missing(small)) {
+    small = -999 # dummy value for small in 'qt'
+    if (method %in% c("qt-2000", "qt-legio")) {
+      stop("Argument 'small' must be provided.")
     }
   }
   #
-  # 'small' must not be provided for method = qt
-  if (method %in% "qt") {
-    if (!small %in% "dummy") {
-      stop("Argument 'small' must not be provided for method 'qt'.")
+  # Missing argument 'method'
+  if (missing(method)) {
+    stop("Argument 'method' must be provided.")
+  }
+  #
+  # Valid argument 'method'
+  if (!missing(method)) {
+    if (!method %in% c("qt", "qt-2000", "qt-legio")) {
+      stop("Argument 'method' must be either: 'qt', 'qt-2000', 'qt-legio'.")
     }
   }
   #
-  # 'large' must be integer
+  # Valid method-specific numerical value of argument 'large'
+  if (!missing(large)) {
+    if (large < 0) {
+      stop("Argument 'large' must be non-negative.")
+    } else if (method %in% "qt") {
+      if (large > 51) {
+        stop("Argument 'large' must be <= 51 for method 'qt'.")
+      }
+    } else if (method %in% "qt-2000") {
+      if (large > 49) {
+        stop("Argument 'large' must be <= 49 for method 'qt-2000'.")
+      }
+    } else if (method %in% "qt-legio") {
+      if (large > 6) {
+        stop("Argument 'large' must be <= 6 for method 'qt-legio'.")
+      }
+    }
+  }
+  #
+  # Valid method-specific numerical value of argument 'small'
+  if (!missing(small)) {
+    if (method %in% "qt") {
+      if (small != -999) {
+        small = -999
+        warning("Argument 'small' is ignored in method 'qt'.")
+      }
+    } else {
+      if (small < 0) {
+        stop("Argument 'small' must be non-negative.")
+      } else if (method %in% "qt-2000") {
+        if (small > 48) {
+          stop("Argument 'small' must be <= 48 for method 'qt-2000'.")
+        }
+      } else if (method %in% "qt-legio") {
+        if (small > 90) {
+          stop("Argument 'small' must be <= 90 for method 'qt-legio'.")
+        }
+      }
+    }
+  }
+  #
+  # Argument 'large' must be integer
   if (!missing(large)) {
     if (!is.numeric(large)) {
-      stop("Argument 'large' must be an integer.")
-    }
-    #
-    if (all(large != as.integer(large))) {
+      stop("Argument 'large' must be integer.")
+    }#
+    if (any(large != as.integer(large))) {
       stop("Argument 'large' must be integer.")
     }
   }
   #
-  # 'small' must be integer
-  if (!missing(small) & all(!small %in% "dummy")) {
+  # Argument 'small' must be integer
+  if (!missing(small)) {
     if (!is.numeric(small) ) {
-      stop("Argument 'small' must be an integer >= 0.")
+      stop("Argument 'small' must be integer.")
     }
     #
     if (all(small != as.integer(small))) {
-      stop("Argument 'small' must be integer >= 0.")
+      stop("Argument 'small' must be integer.")
     }
   }
   #
-  # 'large' and 'small' must be within method-specific bounds
-  if (method %in% "qt") {
-    if (all(large < 0)) {
-      stop("Argument 'large' must be integer >= 0.")
-    }
-    if (all(large > 51)) {
-      stop("Argument 'large' must be non-negative integer <= 51 for method
-           'qt.")
-    }
-  }
-  if (method %in% "qt-2000") {
-    if (all(large > 49)) {
-      if (all(large < 0)) {
-        stop("Argument 'large' must be integer >= 0.")
-      }
-      stop("Argument 'large' must be non-negative integer <= 49 for method
-           'qt-2000'.")
-    }
-    if (all(small < 0)) {
-      stop("Argument 'small' must be integer >= 0.")
-    }
-    if (all(small > 48)) {
-      stop("Argument 'small' must be non-negative integer <= 48 for method
-           'qt-2000'.")
-    }
-  }
 }
 #~~~~~~~~
