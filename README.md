@@ -122,9 +122,9 @@ counts_qt2000 <-
   
 results_qt2000 <-
   counts_qt2000 %>%
-  mutate(qt_95lo = quantify_95lo(large = l_well, small = s_well, method = "qt-2000"),
-         qt_mpn  = quantify_mpn(large = l_well, small = s_well, method = "qt-2000"),
-         qt_95hi = quantify_95hi(large = l_well, small = s_well, method = "qt-2000"))
+  mutate(qt_95lo = quantify_95lo(l_well, s_well, "qt-2000"),
+         qt_mpn  = quantify_mpn(l_well, s_well, "qt-2000"),
+         qt_95hi = quantify_95hi(l_well, s_well, "qt-2000"))
 
 results_qt2000
 
