@@ -1,16 +1,17 @@
 #' Catch input errors before using lookup tables
 #'
-#' This function catches input errors.
-#' This function is and internal function for the package "quantitray".
+#' This function catches input errors for the \code{quantify_} family of
+#' functions.
+#' This function is an internal function for the package \pkg{quantitray}.
 #'
 #' @param large Number of positve large wells (required for all methods).
-#' @param small Number of positve small wells (required for 'qt-2000' and
-#'   'qt-legio' method).
+#' @param small Number of positve small wells (required for method
+#' \code{qt-2000} and \code{qt-legio}).
 #' @param method Defines which QuantiTray method was used:
 #'   \itemize{
-#'     \item 'qt' for QuantiTray method with 51 wells.
-#'     \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
-#'     \item 'qt-legio' for QuantiTray/Legiolert method with 96 wells.
+#'     \item \code{qt} for QuantiTray method with 51 wells.
+#'     \item \code{qt-2000} for QuantiTray/2000 method with 97 wells.
+#'     \item \code{qt-legio} for QuantiTray/Legiolert method with 96 wells.
 #'   }
 #'
 #' @return Error if any input erro is detected; nothing if not.

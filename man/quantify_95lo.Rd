@@ -9,12 +9,13 @@ quantify_95lo(large, small, method)
 \arguments{
 \item{large}{Number of positve large wells (required for all methods).}
 
-\item{small}{Number of positve small wells (required for 'qt-2000' method).}
+\item{small}{Number of positve small wells (required for method
+\code{qt-2000}).}
 
 \item{method}{Defines which QuantiTray method was used:
 \itemize{
-  \item 'qt' for QuantiTray method with 51 wells.
-  \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
+  \item \code{qt} for QuantiTray method with 51 wells.
+  \item \code{qt-2000} for QuantiTray/2000 method with 97 wells.
 }}
 }
 \value{
@@ -32,7 +33,7 @@ quantify_95lo(large = 42, small = 42, method = "qt-2000")
 
 }
 \references{
-https://www.idexx.com/en/water/resources/mpn-generator/
+\url{https://www.idexx.com/en/water/resources/mpn-generator/}
 }
 \author{
 Jan Knappe, \email{jan.knappe@gmail.com}

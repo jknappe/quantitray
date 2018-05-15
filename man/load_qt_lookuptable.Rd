@@ -9,22 +9,23 @@ load_qt_lookuptable(large, small, method)
 \arguments{
 \item{large}{Number of positve large wells (required for all methods).}
 
-\item{small}{Number of positve small wells (required for 'qt-2000' and
-'qt-legio' method).}
+\item{small}{Number of positve small wells (required for method
+\code{qt-2000} and \code{qt-legio}).}
 
 \item{method}{Defines which QuantiTray method was used:
 \itemize{
-  \item 'qt' for QuantiTray method with 51 wells.
-  \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
-  \item 'qt-legio' for QuantiTray/Legiolert method with 96 wells.
+  \item \code{qt} for QuantiTray method with 51 wells.
+  \item \code{qt-2000} for QuantiTray/2000 method with 97 wells.
+  \item \code{qt-legio} for QuantiTray/Legiolert method with 96 wells.
 }}
 }
 \value{
-Tibble of numeric data values from lookup table.
+A tibble of numeric data values from lookup table.
 }
 \description{
-This function loads lookup tables for the quantify_ family of functions.
-This function is and internal function for the package "quantitray".
+This function loads lookup tables for the \code{quantify_} family of
+functions.
+This function is an internal function for the package \pkg{quantitray}.
 }
 \author{
 Jan Knappe, \email{jan.knappe@gmail.com}

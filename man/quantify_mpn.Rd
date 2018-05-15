@@ -9,14 +9,14 @@ quantify_mpn(large, small, method)
 \arguments{
 \item{large}{Number of positve large wells (required for all methods).}
 
-\item{small}{Number of positve small wells (required for 'qt-2000' and
-'qt-legio' method).}
+\item{small}{Number of positve small wells (required for method
+\code{qt-2000} and \code{qt-legio}).}
 
 \item{method}{Defines which QuantiTray method was used:
 \itemize{
-  \item 'qt' for QuantiTray method with 51 wells.
-  \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
-  \item 'qt-legio' for QuantiTray/Legiolert method with 96 wells.
+  \item \code{qt} for QuantiTray method with 51 wells.
+  \item \code{qt-2000} for QuantiTray/2000 method with 97 wells.
+  \item \code{qt-legio} for QuantiTray/Legiolert method with 96 wells.
 }}
 }
 \value{
@@ -34,7 +34,7 @@ quantify_mpn(large = 5, small = 42, method = "qt-legio")
 
 }
 \references{
-https://www.idexx.com/en/water/resources/mpn-generator/
+\url{https://www.idexx.com/en/water/resources/mpn-generator/}
 }
 \author{
 Jan Knappe, \email{jan.knappe@gmail.com}

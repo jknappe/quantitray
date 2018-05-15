@@ -14,10 +14,10 @@ data(quanti_96)
 \description{
 Results from an IDEXX Quanti-Tray/Legiolert are expressed in counts of
 positive small and large wells. This is a lookup table to convert these
-counts into MPN (most probable number) expressed in MPN/100 ml. The data set
-includes the following columns:
+counts into MPN (most probable number) expressed in MPN/100 ml.
 }
 \details{
+The data set includes the following columns:
 \itemize{
   \item count_large. number of positive large wells (0 -- 6)
   \item count_large. number of positive small wells (0 -- 90)

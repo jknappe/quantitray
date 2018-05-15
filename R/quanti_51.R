@@ -3,8 +3,9 @@
 #' Results from an IDEXX Quanti-Tray are expressed in counts of positive
 #' wells. This is a lookup table to convert these counts into MPN (most
 #' probable number) with upper and lower 95\% confidence limits expressed
-#' in MPN/100 ml. The data set includes the following columns:
+#' in MPN/100 ml.
 #'
+#' The data set includes the following columns:
 #' \itemize{
 #'   \item count_large. number of positive wells (0 -- 51)
 #'   \item MPN_95lo. lower 95\% confidence interval (0 -- 146.1)

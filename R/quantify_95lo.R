@@ -5,18 +5,19 @@
 #' QuantiTray and QuantiTray/2000 trays.
 #'
 #' @param large Number of positve large wells (required for all methods).
-#' @param small Number of positve small wells (required for 'qt-2000' method).
+#' @param small Number of positve small wells (required for method
+#' \code{qt-2000}).
 #' @param method Defines which QuantiTray method was used:
 #'   \itemize{
-#'     \item 'qt' for QuantiTray method with 51 wells.
-#'     \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
+#'     \item \code{qt} for QuantiTray method with 51 wells.
+#'     \item \code{qt-2000} for QuantiTray/2000 method with 97 wells.
 #'   }
 #'
 #' @return Numerical value: lower 95 \% confidence interval of MPN/100ml in
 #'   sample.
 #'
 #' @references
-#'   https://www.idexx.com/en/water/resources/mpn-generator/
+#'   \url{https://www.idexx.com/en/water/resources/mpn-generator/}
 #'
 #' @author
 #'   Jan Knappe, \email{jan.knappe@@gmail.com}

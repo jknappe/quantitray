@@ -5,19 +5,19 @@
 #' QuantiTray, QuantiTray/2000, and QuantiTray/Legiolert trays.
 #'
 #' @param large Number of positve large wells (required for all methods).
-#' @param small Number of positve small wells (required for 'qt-2000' and
-#'   'qt-legio' method).
+#' @param small Number of positve small wells (required for method
+#' \code{qt-2000} and \code{qt-legio}).
 #' @param method Defines which QuantiTray method was used:
 #'   \itemize{
-#'     \item 'qt' for QuantiTray method with 51 wells.
-#'     \item 'qt-2000' for QuantiTray/2000 method with 97 wells.
-#'     \item 'qt-legio' for QuantiTray/Legiolert method with 96 wells.
+#'     \item \code{qt} for QuantiTray method with 51 wells.
+#'     \item \code{qt-2000} for QuantiTray/2000 method with 97 wells.
+#'     \item \code{qt-legio} for QuantiTray/Legiolert method with 96 wells.
 #'   }
 #'
 #' @return Numerical value: Point estimate of MPN/100ml in sample.
 #'
 #' @references
-#'   https://www.idexx.com/en/water/resources/mpn-generator/
+#'   \url{https://www.idexx.com/en/water/resources/mpn-generator/}
 #'
 #' @author
 #'   Jan Knappe, \email{jan.knappe@@gmail.com}

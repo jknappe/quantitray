@@ -7,15 +7,17 @@
 #' A suite of functions to convert Quanti-Tray results into MPN (most probable
 #' number) readings.
 #'   \itemize{
-#'     \item 'quantify_mpn()' outputs the point estimate for MPN.
-#'     \item 'quantify_95lo()' outputs the lower 95\% confidence interval value.
-#'     \item 'quantify_95hi()' outputs the upper 95\% confidence interval value.
+#'     \item \code{quantify_mpn()} outputs the point estimate for MPN.
+#'     \item \code{quantify_95lo()} outputs the lower 95\% confidence interval value.
+#'     \item \code{quantify_95hi()} outputs the upper 95\% confidence interval value.
 #'   }
 #'
-#' @section Full documentation:
-#' Full documentation for this package is available at
-#' https://www.janknappe.com/quantitray
-#'
+#' @section See also:
+#'   \itemize{
+#'     \item Full documentation for this package is available at
+#'         \url{https://www.janknappe.com/quantitray}
+#'     \item Report bugs at \url{https:github.com/jknappe/quantitray/issues}
+#'    }
 #' @docType package
 #' @name quantitray
 NULL
