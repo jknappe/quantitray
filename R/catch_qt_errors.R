@@ -29,6 +29,9 @@ catch_qt_errors <- function(large, small, method) {
   #
   # set 'small' to dummy value if not provided (for method 'qt')
   if (method %in% "qt") {
+    if (!missing(small)) {
+      stop("Argument 'small' must not be provided for method 'qt'.")
+    }
     small <- "dummy"
   }
   # 'method' must be provided
