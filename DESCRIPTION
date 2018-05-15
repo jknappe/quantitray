@@ -6,7 +6,7 @@ Authors@R: person("Jan", "Knappe", email = "jan.knappe@gmail.com", role = c("aut
 Description: An R package to calculate bacterial counts as MPN (most probable number, 
     including confidence intervals) from IDEXX Quanti-Tray, Quanti-Tray/2000, and 
 	Quanti-Tray/Legiolert tests.
-Depends: 
+Depends:
     R (>= 3.5.0)
 Imports:
     dplyr (>= 0.7.4),
@@ -18,3 +18,4 @@ BugReports: https://github.com/jknappe/quantitray/issues
 Encoding: UTF-8
 LazyData: true
 RoxygenNote: 6.0.1
+Suggests: testthat
