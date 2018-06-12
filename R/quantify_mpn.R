@@ -39,7 +39,7 @@ quantify_mpn <- function(large, small, method) {
   # Error handling
   # ~~~~~~~~~~~~~~~~
   #
- catch_qt_errors(large, small, method)
+  catch_qt_errors(large, small, method)
   #
   # set 'small' to dummy value if not provided (for method 'qt')
   if (method %in% "qt") {

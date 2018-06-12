@@ -51,47 +51,47 @@ catch_qt_errors <- function(large, small, method) {
       stop("Argument 'method' must be either: 'qt', 'qt-2000', 'qt-legio'.")
     }
   }
-  #
+  # TODO: fix error when checking below in vectorised format
   # Valid method-specific numerical value of argument 'large'
-  if (!missing(large)) {
-    if (large < 0) {
-      stop("Argument 'large' must be non-negative.")
-    } else if (method %in% "qt") {
-      if (large > 51) {
-        stop("Argument 'large' must be 50 or lower for method 'qt'.")
-      }
-    } else if (method %in% "qt-2000") {
-      if (large > 49) {
-        stop("Argument 'large' must be 49 or lower for method 'qt-2000'.")
-      }
-    } else if (method %in% "qt-legio") {
-      if (large > 6) {
-        stop("Argument 'large' must be 6 or lower for method 'qt-legio'.")
-      }
-    }
-  }
+  # if (!missing(large)) {
+  #   if (large < 0) {
+  #     stop("Argument 'large' must be non-negative.")
+  #   } else if (method %in% "qt") {
+  #     if (large > 51) {
+  #       stop("Argument 'large' must be 50 or lower for method 'qt'.")
+  #     }
+  #   } else if (method %in% "qt-2000") {
+  #     if (large > 49) {
+  #       stop("Argument 'large' must be 49 or lower for method 'qt-2000'.")
+  #     }
+  #   } else if (method %in% "qt-legio") {
+  #     if (large > 6) {
+  #       stop("Argument 'large' must be 6 or lower for method 'qt-legio'.")
+  #     }
+  #   }
+  # }
   #
   # Valid method-specific numerical value of argument 'small'
-  if (!missing(small)) {
-    if (method %in% "qt") {
-      if (small != -999) {
-        small = -999
-        warning("Argument 'small' is ignored in method 'qt'.")
-      }
-    } else {
-      if (small < 0) {
-        stop("Argument 'small' must be non-negative.")
-      } else if (method %in% "qt-2000") {
-        if (small > 48) {
-          stop("Argument 'small' must be 48 or lower for method 'qt-2000'.")
-        }
-      } else if (method %in% "qt-legio") {
-        if (small > 90) {
-          stop("Argument 'small' must be 90 or lower for method 'qt-legio'.")
-        }
-      }
-    }
-  }
+  # if (!missing(small)) {
+  #   if (method %in% "qt") {
+  #     if (small != -999) {
+  #       small = -999
+  #       warning("Argument 'small' is ignored in method 'qt'.")
+  #     }
+  #   } else {
+  #     if (small < 0) {
+  #       stop("Argument 'small' must be non-negative.")
+  #     } else if (method %in% "qt-2000") {
+  #       if (small > 48) {
+  #         stop("Argument 'small' must be 48 or lower for method 'qt-2000'.")
+  #       }
+  #     } else if (method %in% "qt-legio") {
+  #       if (small > 90) {
+  #         stop("Argument 'small' must be 90 or lower for method 'qt-legio'.")
+  #       }
+  #     }
+  #   }
+  # }
   #
   # Argument 'large' must be integer
   if (!missing(large)) {
